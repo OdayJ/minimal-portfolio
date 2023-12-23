@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Hydrate from "./components/Hydrate";
 
 export const metadata = {
   title: "Create Next App",
@@ -20,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${Satoshi.variable} ${Cabinet.variable}`}>
-        {children}
+        <Hydrate>{children}</Hydrate>
       </body>
     </html>
   );

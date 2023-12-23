@@ -2,6 +2,8 @@
 import React from "react";
 import { styled } from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -23,6 +25,8 @@ const Title = styled.div`
   }
 `;
 const Button = styled.a`
+  text-decoration: none;
+  color: inherit;
   font-family: var(--font-satoshi);
   font-weight: 700;
   width: fit-content;
@@ -77,7 +81,18 @@ export default function WorkCard({ title, src, children }) {
         <h2>{title}</h2>
         <p>{children}</p>
       </Title>
-      <Button>View Project</Button>
+      <Link
+        style={{
+          color: "inherit",
+          width: "fit-content",
+          textDecoration: "none",
+        }}
+        href={{
+          pathname: `/projects/${title}`,
+        }}
+      >
+        <Button>View Project</Button>
+      </Link>
     </Wrapper>
   );
 }
