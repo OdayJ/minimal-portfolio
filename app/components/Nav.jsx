@@ -40,7 +40,7 @@ const Link = styled.li`
 `;
 
 const Wrapper = styled.div`
-  max-width: 1100px;
+  max-width: 1160px;
   width: 100%;
   position: fixed;
   top: 32px;
@@ -53,6 +53,17 @@ const Wrapper = styled.div`
   }
   @media (min-width: 1100px) {
     padding: 0px;
+  }
+  button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    font-size: 1.5rem;
+    font-family: var(--font-satoshi);
   }
 `;
 export default function Nav() {
@@ -68,9 +79,9 @@ export default function Nav() {
   };
   return (
     <Wrapper>
-      <buton style={{ cursor: "pointer" }} onClick={handleClick}>
+      <button style={{ cursor: "pointer" }} onClick={handleClick}>
         O
-      </buton>
+      </button>
       {pathname === "/" && (
         <LinksList>
           <Link onClick={() => scrollToSection("Image")}>About</Link>

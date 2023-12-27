@@ -6,6 +6,7 @@ import Intro from "./components/Intro";
 import Links from "./components/Links";
 import Nav from "./components/Nav";
 import Work from "./components/Work";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <About />
       <Skills />
       <Work />
+      <Footer />
     </main>
   );
 }
