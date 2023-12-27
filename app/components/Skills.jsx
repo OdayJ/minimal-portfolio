@@ -33,6 +33,7 @@ const Desc = styled.p`
   padding: 1rem 0 2.5rem 0;
   @media (min-width: 1100px) {
     max-width: 65%;
+    font-size: 1.1rem;
   }
 `;
 
@@ -51,6 +52,7 @@ const Skill = styled.div`
   }
   @media (min-width: 1100px) {
     width: 25%;
+    font-size: 1.1rem;
   }
 `;
 const SkillWrapper = styled.div`
@@ -71,7 +73,7 @@ export default function Skills() {
     "MongoDB",
   ];
   return (
-    <Stretched>
+    <Stretched id="Skills">
       <Wrapper>
         <Title>My Skills</Title>
         <Desc>

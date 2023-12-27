@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 `;
 export default function HeroImage() {
   return (
-    <Wrapper>
+    <Wrapper id="Image">
       <Image
         src="/test.png"
         alt="img"

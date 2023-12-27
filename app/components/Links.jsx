@@ -37,7 +37,7 @@ const Link = styled.a`
 `;
 export default function Links() {
   return (
-    <Wrapper>
+    <Wrapper id="Links">
       <Bar />
       <Link href="https://www.linkedin.com/in/oday-jawaada/" target="_blank">
         <FaLinkedin size={24} />

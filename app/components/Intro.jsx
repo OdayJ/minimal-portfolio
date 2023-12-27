@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 
 export default function Intro() {
   return (
-    <Wrapper>
+    <Wrapper id="Hero">
       <p>Hi there, I'm Oday.</p>
       <p>
         A Front-End <span>Developer</span>,

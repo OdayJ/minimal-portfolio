@@ -1,8 +1,13 @@
 "use client";
+import { MdOutlineSwipe } from "react-icons/md";
 import React from "react";
 import { styled } from "styled-components";
 import Image from "next/image";
 import Timeline from "@/app/components/project/Timeline";
+import Section from "@/app/components/project/Section";
+import ImageSlider from "@/app/components/project/ImageSlider";
+import Projects from "@/app/projects";
+import Nav from "@/app/components/Nav";
 
 const Container = styled.div`
   width: 100%;
@@ -11,10 +16,18 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
+  max-width: 770px;
+  width: 100%;
+  display: grid;
+  padding: 64px 24px;
+  gap: 64px;
+`;
+const ImageWrapper = styled.div`
   max-width: 1100px;
   width: 100%;
   display: grid;
   padding: 0px 24px;
+  margin-top: 100px;
 `;
 
 const CoverImg = styled.div`
@@ -22,40 +35,32 @@ const CoverImg = styled.div`
 `;
 const Title = styled.h2`
   font-family: var(--font-cabinet);
-  font-size: clamp(1.7rem, 5.6vw + 0.5rem, 2.5rem);
+  font-size: clamp(1.7rem, 5.6vw + 0.5rem, 2.1rem);
   font-weight: 800;
   @media (min-width: 550px) {
-    font-size: clamp(2.1rem, 6.8vw - 0.25rem, 4.4rem);
+    font-size: clamp(2.1rem, 6.8vw - 0.25rem, 3rem);
   }
   @media (min-width: 1100px) {
-    font-size: 72px;
+    font-size: 3rem;
   }
 `;
 const Desc = styled.p`
+  font-size: 1rem;
   font-family: var(--font-satoshi);
   opacity: 0.5;
+  @media (min-width: 550px) {
+    font-size: 1.2rem;
+  }
 `;
 
-const PROJECTS = {
-  Wedo: {
-    cover: "/Wedo/WedoCover-min.jpg",
-    desc: "A collaborative to-do list for teams built in NextJS and MongoDB",
-    link: "https://github.com/OdayJ/Wedo",
-    timeline: "AUG 20223 - SEP 2023",
-  },
-  Dabfoods: {
-    cover: "/Dabfoods/DabfoodsCover.webp",
-    desc: "A collaborative to-do list for teams built in NextJS and MongoDB",
-    link: "https://github.com/OdayJ/Wedo",
-    timeline: "AUG 20223 - SEP 2023",
-  },
-};
+const PROJECTS = Projects;
 
 export default function page({ params }) {
   const project = PROJECTS[params.id];
   return (
     <Container>
-      <Wrapper>
+      <Nav />
+      <ImageWrapper>
         <CoverImg>
           <Image
             src={project.cover}
@@ -71,13 +76,37 @@ export default function page({ params }) {
             }}
           />
         </CoverImg>
-        <Title>{params.id}</Title>
-        <Desc>{project.desc}</Desc>
+      </ImageWrapper>
+
+      <Wrapper>
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <Title>{params.id}</Title>
+          <Desc>{project.desc}</Desc>
+        </div>
         <Timeline
           title={params.id}
           link={project.link}
           timeline={project.timeline}
         />
+        <Section title="Introduction">{project.introduction}</Section>
+        <Section title="Problem">{project.problem}</Section>
+        <Section title="Solution">{project.solution}</Section>
+        <Section title="Image Gallery">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+
+              gap: "8px",
+            }}
+          >
+            <p>Swipe to see more</p>
+            <MdOutlineSwipe />
+          </div>
+
+          <ImageSlider color="#91a8cf" images={project.images}></ImageSlider>
+        </Section>
+        <Section title="Reflection">{project.reflection}</Section>
       </Wrapper>
     </Container>
   );

@@ -28,6 +28,7 @@ const Desc = styled.p`
   padding: 1rem 0 2.5rem 0;
   @media (min-width: 1100px) {
     max-width: 65%;
+    font-size: 1.1rem;
   }
 `;
 
@@ -41,7 +42,7 @@ const CardWrapper = styled.div`
 `;
 export default function Work() {
   return (
-    <Wrapper>
+    <Wrapper id="Work">
       <Title>My Work</Title>
       <Desc>
         As I’ve grown as a developer, I’ve worked alongside senior designers and

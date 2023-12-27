@@ -5,11 +5,17 @@ import { RxOpenInNewWindow } from "react-icons/rx";
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
   justify-content: space-around;
   border: solid;
   border-width: 2px 0px;
   border-color: #ecedf0;
   padding: 24px 0px;
+  @media (min-width: 550px) {
+    flex-direction: row;
+    gap: 0px;
+  }
 `;
 
 const Info = styled.div`

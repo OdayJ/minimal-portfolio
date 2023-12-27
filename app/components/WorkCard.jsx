@@ -22,6 +22,9 @@ const Title = styled.div`
   p {
     font-family: var(--font-satoshi);
     opacity: 0.8;
+    @media (min-width: 1100px) {
+      font-size: 1.1rem;
+    }
   }
 `;
 const Button = styled.a`

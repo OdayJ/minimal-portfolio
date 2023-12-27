@@ -18,12 +18,13 @@ const Wrapper = styled.div`
     padding: 40px 0px 64px 0px;
     grid-template-columns: 1fr 1fr;
     gap: 32px 128px;
+    font-size: 1.1rem;
   }
 `;
 
 export default function About() {
   return (
-    <Wrapper>
+    <Wrapper id="About">
       <p>
         I’m a recent computer science graduate from the University of
         Birmingham.

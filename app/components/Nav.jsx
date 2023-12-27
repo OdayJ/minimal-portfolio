@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
 import { styled } from "styled-components";
-
+import useSmoothScroll from "./useSmoothScroll";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 const LinksList = styled.ul`
   font-family: var(--font-satoshi);
   list-style-type: none;
@@ -54,15 +56,29 @@ const Wrapper = styled.div`
   }
 `;
 export default function Nav() {
+  const scrollToSection = useSmoothScroll();
+  const router = useRouter();
+  const pathname = usePathname();
+  const handleClick = () => {
+    if (pathname === "/") {
+      setTimeout(() => scrollToSection(), 0);
+    } else {
+      router.push("/");
+    }
+  };
   return (
     <Wrapper>
-      <p>O</p>
-      <LinksList>
-        <Link>About</Link>
-        <Link>Skills</Link>
-        <Link>Work</Link>
-        <Link>Contact</Link>
-      </LinksList>
+      <buton style={{ cursor: "pointer" }} onClick={handleClick}>
+        O
+      </buton>
+      {pathname === "/" && (
+        <LinksList>
+          <Link onClick={() => scrollToSection("Image")}>About</Link>
+          <Link onClick={() => scrollToSection("Skills")}>Skills</Link>
+          <Link onClick={() => scrollToSection("Work")}>Work</Link>
+          <Link onClick={() => scrollToSection("Contact")}>Contact</Link>
+        </LinksList>
+      )}
     </Wrapper>
   );
 }
