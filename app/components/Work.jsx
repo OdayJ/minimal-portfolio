@@ -45,9 +45,7 @@ export default function Work() {
     <Wrapper id="Work">
       <Title>My Work</Title>
       <Desc>
-        As I’ve grown as a developer, I’ve worked alongside senior designers and
-        developers who had raised my standards to what to expect from a web
-        application.
+        Take a look at some of the projects that I've recently worked on.
       </Desc>
       <CardWrapper>
         <WorkCard title="Wedo" src="/Wedo/WedoCover-min.jpg">

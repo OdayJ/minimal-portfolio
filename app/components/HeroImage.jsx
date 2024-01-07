@@ -19,7 +19,7 @@ export default function HeroImage() {
   return (
     <Wrapper id="Image">
       <Image
-        src="/test.png"
+        src="/Hero.jpeg"
         alt="img"
         sizes="100vw"
         width={0}

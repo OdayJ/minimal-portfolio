@@ -8,6 +8,7 @@ import Section from "@/app/components/project/Section";
 import ImageSlider from "@/app/components/project/ImageSlider";
 import Projects from "@/app/projects";
 import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
 
 const Container = styled.div`
   width: 100%;
@@ -108,6 +109,7 @@ export default function page({ params }) {
         </Section>
         <Section title="Reflection">{project.reflection}</Section>
       </Wrapper>
+      <Footer />
     </Container>
   );
 }
