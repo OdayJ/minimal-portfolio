@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 
 const ImageWrapper = styled(motion.div)`
   padding: 5px 20px;
-  min-width: 390px;
+  min-width: 100%;
   @media (min-width: 550px) {
     padding: 5px 30px;
     min-width: 100%;
